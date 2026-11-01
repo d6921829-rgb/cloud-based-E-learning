@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnSpace | Cloud E-Learning</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">L</span> LearnSpace</a>
+  <nav><button class="nav-btn active" id="browseNav">Explore courses</button><button class="nav-btn" id="myCoursesNav">My learning</button></nav>
+  <div class="account"><span id="userLabel">Guest</span><button class="outline small" id="authOpen">Login</button><button class="outline small hidden" id="logoutBtn">Logout</button></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-inner"><p class="eyebrow">LEARN ANYTIME. LEARN ANYWHERE.</p><h1>Build skills for<br><span>what's next.</span></h1>
+  <p>Explore online courses, learn at your own pace, and track your progress in one place.</p>
+  <button class="primary" id="exploreBtn">Explore courses <span>→</span></button></div>
+  <div class="hero-art"><div class="art-card"><div class="art-top"><span></span><span></span><span></span></div><div class="art-book">✦</div><div class="art-line wide"></div><div class="art-line"></div><div class="art-progress"><i></i></div><small>YOUR NEXT CHAPTER</small></div><div class="float-badge">✓ Keep learning</div></div>
+</section>
+<section class="content">
+  <div class="section-head"><div><p class="eyebrow">START LEARNING</p><h2 id="sectionTitle">Explore popular courses</h2><p class="sub" id="sectionSub">Choose a course and start building your skills.</p></div><input id="searchInput" class="search" placeholder="Search courses..." aria-label="Search courses"></div>
+  <div id="courseGrid" class="course-grid"><div class="empty">Loading courses...</div></div>
+  <section id="lessonPanel" class="lesson-panel hidden"></section>
+  <section id="adminPanel" class="admin-panel hidden">
+    <h2>Add a new course</h2><p class="sub">Administrator area. Add a course with one or more lessons.</p>
+    <form id="courseForm" class="admin-form">
+      <input name="title" placeholder="Course title" required><input name="category" placeholder="Category" required>
+      <input name="instructor" placeholder="Instructor name" required><input name="duration" placeholder="Duration (e.g. 4 weeks)" required>
+      <select name="level"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
+      <textarea name="description" placeholder="Course description" required></textarea>
+      <div id="lessonFields"><div class="lesson-input"><input placeholder="Lesson 1 title" class="lesson-title" required><textarea placeholder="Lesson 1 content" class="lesson-content" required></textarea></div></div>
+      <button type="button" class="outline" id="addLessonBtn">+ Add lesson</button><button class="primary" type="submit">Create course</button>
+    </form><p id="adminMessage" class="message"></p>
+  </section>
+</section>
+</main>
+<footer><strong>LearnSpace</strong><span>Cloud-Based E-Learning Platform · Student Project</span></footer>
+
+<div id="authModal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button>
+  <div class="tabs"><button id="loginTab" class="tab active">Login</button><button id="registerTab" class="tab">Create account</button></div>
+  <h2 id="authTitle">Welcome back</h2><p class="sub" id="authSub">Log in to continue learning.</p>
+  <form id="authForm"><input id="fullName" placeholder="Your name" class="hidden"><input id="email" type="email" placeholder="Email address" required><input id="password" type="password" placeholder="Password (minimum 8 characters)" minlength="8" required><button class="primary full" id="authSubmit">Login</button></form>
+  <p id="authMessage" class="message"></p>
+</div></div>
+<script src="app.js"></script>
+</body></html>
